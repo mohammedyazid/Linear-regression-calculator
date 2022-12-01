@@ -35,19 +35,24 @@ class main():
             elif Choice == 'Restore data': 
                                            self.table_x,self.table_y =act.Loaddata()
                                            act.ShowTables(self.table_x,self.table_y)
-            elif Choice == 'Back up data': actions.Savedata()
+            elif Choice == 'Back up data': act.Savedata(self.table_x,self.table_y)
 
-            elif Choice == "Least squares Method": 
-                                           ls.Ls_Calculate(self.table_x,self.table_y)
-                                           self.Sol_Choice="LS"
-                                           self.Previous_Menu=Squ_Menu
-                                           self.ShowMenu(Squ_Menu)
+            elif Choice == "Least squares Method":
+                                           if act.CheckEmpty(self.table_x,self.table_y):pass
+                                           else:
+                                                ls.Ls_Calculate(self.table_x,self.table_y)
+                                                self.Sol_Choice="LS"
+                                                self.Previous_Menu=Squ_Menu
+                                                self.ShowMenu(Squ_Menu)
 
-            elif Choice == "Least rectangles Method": 
-                                           lr.Lr_Calculate(self.table_x,self.table_y)
-                                           self.Sol_Choice="LR"
-                                           self.Previous_Menu=Rec_Menu
-                                           self.ShowMenu(Rec_Menu)
+            elif Choice == "Least rectangles Method":
+                                           if act.CheckEmpty(self.table_x,self.table_y):pass
+                                           else:
+                                                act.CheckEmpty(self.table_x,self.table_y) 
+                                                lr.Lr_Calculate(self.table_x,self.table_y)
+                                                self.Sol_Choice="LR"
+                                                self.Previous_Menu=Rec_Menu
+                                                self.ShowMenu(Rec_Menu)
             elif Choice == "Exit":        exit()
         
             elif Choice in ["Calculate the regression line Dy/x","Calculate the regression line Dx/y"]: 

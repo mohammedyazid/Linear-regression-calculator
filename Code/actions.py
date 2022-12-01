@@ -15,12 +15,13 @@ class actions():
     def Cleartables(X,Y):
         return X.clear(),Y.clear()    
 
-    def CheckEmpty(X,Y):
+    def CheckEmpty(self,X,Y):
         if len(X)==0 or len(Y)==0:
             print("The tables are empty!")
+        return True
 
     ##File actions
-    def Savedata(X,Y):
+    def Savedata(self,X,Y):
         if len(X)==0 or len(Y)==0: print("No data to save!")
         else:
             with open("Code/data",'wb') as file:
