@@ -18,7 +18,9 @@ class actions():
     def CheckEmpty(self,X,Y):
         if len(X)==0 or len(Y)==0:
             print("The tables are empty!")
-        return True
+            return True
+        else:
+            return False
 
     ##File actions
     def Savedata(self,X,Y):
